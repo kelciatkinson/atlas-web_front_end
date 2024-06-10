@@ -324,7 +324,7 @@ ul.row {
     height: .2rem;
 }
 
-.nav .nav-link:hover::before {
+.nav .nav-link:hover:before {
     background-color: var(--color-primary);
     width: 1rem;
 }
