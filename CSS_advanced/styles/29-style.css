@@ -314,7 +314,7 @@ ul.row {
     left: var(--header-logo-link-left);
 }
 
-.nav .nav-link:before {
+.nav .nav-link::before {
     content: empty;
     position: absolute;
     top: 0;
@@ -324,7 +324,7 @@ ul.row {
     height: .2rem;
 }
 
-.nav .nav-link:hover:before {
+.nav .nav-link:hover::before {
     background-color: var(--color-primary);
     width: 1rem;
 }
