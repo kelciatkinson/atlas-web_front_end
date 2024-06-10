@@ -313,7 +313,7 @@ ul.row {
     height: .2rem;
 }
 
-.nav .nav-link:hover .nav-link::before {
+.nav:hover .nav-link:hover .nav-link::before {
     background-color: var(--color-primary);
     width: 1rem;
 }
