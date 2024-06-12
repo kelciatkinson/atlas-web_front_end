@@ -49,3 +49,43 @@
     font-size: 14px;
     margin-top: -10px;
 }
+
+.popover h2 {
+    margin: 10px;
+    margin-left: -20px;
+    margin-bottom: 5px;
+}
+
+.popover {
+    background-color: #FAFAFA;
+    margin: 0;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    list-style: none;
+    margin-left: -21px;
+    margin-top: -4px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+}
+
+.popover ul {
+    list-style: none;
+    margin-left: -41px;
+}
+
+.popover li {
+    padding: 5px;
+}
+
+.filters .popover {
+    display: none;
+}
+
+.locations:hover .popover {
+    display: block;
+}
+
+.amenities:hover .popover {
+    display: block;
+}
+
