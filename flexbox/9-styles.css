@@ -185,16 +185,10 @@
     margin: 0;
     padding: 0;
     list-style: none;
-  }
-  
-  .row::after {
-    content: '';
-    display: table;
-    clear: both;
+    display: flex;
   }
   
   [class*='col-'] {
-    float: left;
     padding: 0.5rem;
   }
   
@@ -502,4 +496,3 @@
     font-size: 10rem;
     z-index: -1;
   }
-    
