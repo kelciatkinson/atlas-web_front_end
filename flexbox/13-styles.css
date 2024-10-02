@@ -409,7 +409,7 @@
   .post-meta-list strong {
     color: var(--color-primary);
     font-size: var(--font-size-small);
-    text-transform: var(--uppercase);
+    text-transform: uppercase;
     display: block;
   }
 
