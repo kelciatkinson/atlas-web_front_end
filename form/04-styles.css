@@ -692,10 +692,14 @@
         width: 100%;
         padding: 1.2rem;
         line-height: 1;
-        border: 0.1rem solid var(--color-black);
+        border: .1rem solid var(--color-black);
         background-color: var(--color-white);
         box-shadow: none;
         outline: 0;
+    }
+
+    input[type="text"], input[type="email"] {
+        padding-right: 3rem;
     }
 
     input[type="text"], input[type="email"], input[type="email"]:focus, textarea:focus {
