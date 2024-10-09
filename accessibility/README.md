@@ -1,1 +1,1 @@
-Here is a readme
+This directory contains tasks for my Accessibility project at Atlas School. Working through each task, I have learned about skip links, titles, lang, alt text, labels, and correct headings in HTML & CSS as they concern to accessibility on the internet.
