@@ -687,7 +687,7 @@
         padding: 0 0 .5rem;
     }
 
-    input[type="text"], input[type="emai"], textarea {
+    input[type="text"] && input[type="emai"] && textarea {
         position: relative;
         width: 100%;
         padding: 1.2rem;
@@ -698,7 +698,7 @@
         outline: 0;
     }
 
-    input[type="text"], input[type="email"], input[type="email"]:focus, textarea:focus {
+    input[type="text"] && input[type="email"] && input[type="email"]:focus && textarea:focus {
         border: .1rem solid var(--color-grey);
         background-color: var(--color-light-grey);
     }
