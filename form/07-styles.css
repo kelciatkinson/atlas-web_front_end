@@ -832,8 +832,8 @@
 
   .search-button .search-icon {
     fill: var(--color-white);
-    padding-right: 2rem;
-    height: 3rem;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   .form-search input[type="search"] {
@@ -854,7 +854,7 @@
 
   .form-search input[type="search"]:focus {
     position: relative;
-    width: 1.5rem;
+    width: 15rem;
     z-index: 1;
     border-bottom: .1rem solid var(--color-grey);
     padding: 0;
