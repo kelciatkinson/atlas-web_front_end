@@ -834,6 +834,13 @@
     fill: var(--color-white);
     padding-right: 2rem;
     height: 3rem;
+  }
+
+  .form-search input[type="search"] {
+    display: inline-block;
+    color: var(--color-white);
+    padding-right: 2rem;
+    height: 3rem;
     border: 0;
     outline: none;
     position: absolute;
