@@ -1,5 +1,3 @@
-Author: <kelci.atkinson@atlasschool.com>
-
 This project is for Atlas School's Front End course to learn Bootstrap and responsive web design to structure and style web pages.
 
 0-index.html Adding Bootstrap to the HTML to reset the CSS.
@@ -9,4 +7,6 @@ This project is for Atlas School's Front End course to learn Bootstrap and respo
 4-index.html The tabs here can switch back and forth and extends or collapses the html content.
 5-index.html This responsive page shows/hides a title depending on the size of the page.
 6-index.html This task is to overwrite the html only using a css file.
-6-styles.css 
+6-styles.css
+
+Author: <kelci.atkinson@atlasschool.com>
