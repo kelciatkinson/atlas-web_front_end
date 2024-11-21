@@ -15,11 +15,16 @@
         }
         createFamilyTree();
         function addNewMember(firstname, lastname) {
-          $('tbody').append($('<tr>').append($('<td>').text(firstname), $('<td>').text(lastname), $('<td>').text('(x)')))
-        }
+          $('tbody').append($('<tr>').append($('<td>').text(firstname), $('<td>').text(lastname),
+            $('<td>').text('(x)').css('background-color', 'orange').click(function() {
+              $('<tr>').remove();
+            }
+        )))}
         addNewMember('Guillaume', 'Salva');
-        //addEventListener('click', $('tbody').html($('<tr>').append($('<td>').text(''), $('<td>').text(''), $('<td>').text(''))))))
-
+        addNewMember('Arielle', 'Snizt');
+        addNewMember('Fanette', 'Snizt');
+        addNewMember('Gerard', 'Snizt');
+        addNewMember('Victor', 'Salva');
       </script>
     </body>
 </html>
