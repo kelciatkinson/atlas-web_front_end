@@ -30,10 +30,9 @@
         function createForm() {
           let form = document.createElement('form');
           let select = document.createElement('select');
-          let option = document.createElement('option');
 
-          document.body.prepend(select.append(option.val('before').text('Before'), option.val('after').text('After')))
-          document.body.prepend(form.append(('<input>').attr('type', 'text'), '<input>').attr('type', 'text'));
+          document.body.prepend(select.append($('<option>', {value: 'before', text: 'Before'}), $('<option>', {value: 'after', text: 'After'})));
+          document.body.prepend(form.append($('<input>', {type: 'text'}), $('<input>', {type: 'text'})));
         }
         createForm();
       </script>
