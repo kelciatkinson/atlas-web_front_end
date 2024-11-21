@@ -21,9 +21,10 @@
           else {
             $('<tbody>').append('<tr>');
           }
+
           $('tbody').append($('<tr>').append($('<td>').text(firstname), $('<td>').text(lastname),
-            $('<td>').text('(x)').css('background-color', 'orange').click(function() {
-              $('<tr>').remove();
+            $('<td>').text('(x)').css('background-color', 'orange').on('click', function() {
+              $(this).closest('tr').remove();
             }
         )))}
 
@@ -31,8 +32,15 @@
           let form = $('<form>');
           let select = $('<select>');
 
-          $('body').prepend(select.append($('<option>', {value: 'before', text: 'Before'}), $('<option>', {value: 'after', text: 'After'})));
-          $('body').prepend(form.append($('<input>', {type: 'text'}), $('<input>', {type: 'text'})));
+          $('body').prepend(
+            $('<input>', {type: 'text'}),
+            $('<input>', {type: 'text'}),
+            select.append($('<option>', {value: 'before', text: 'Before'}), $('<option>', {value: 'after', text: 'After'})),
+            $('<input>', {type: 'submit'}).on('click', function() {
+              addNewMember('Guillaume', 'Salva', 'after');
+            })
+          
+          )
         }
         createForm();
       </script>

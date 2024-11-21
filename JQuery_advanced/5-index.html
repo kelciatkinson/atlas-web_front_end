@@ -16,8 +16,8 @@
         createFamilyTree();
         function addNewMember(firstname, lastname) {
           $('tbody').append($('<tr>').append($('<td>').text(firstname), $('<td>').text(lastname),
-            $('<td>').text('(x)').css('background-color', 'orange').click(function() {
-              $('<tr>').remove();
+            $('<td>').text('(x)').css('background-color', 'orange').on('click', function() {
+              $(this).closest('tr').remove();
             }
         )))}
         addNewMember('Guillaume', 'Salva');
