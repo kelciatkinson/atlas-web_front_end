@@ -14,17 +14,28 @@
           $('<tbody>').append()))
         }
         createFamilyTree();
-        function addNewMember(firstname, lastname) {
+        function addNewMember(firstname, lastname, position) {
+          if (position === 'before') {
+            $(tbody).prepend($('<tr>'));
+          }
+          else {
+            $('<tbody>').append('<tr>');
+          }
           $('tbody').append($('<tr>').append($('<td>').text(firstname), $('<td>').text(lastname),
             $('<td>').text('(x)').css('background-color', 'orange').click(function() {
               $('<tr>').remove();
             }
         )))}
-        addNewMember('Guillaume', 'Salva');
-        addNewMember('Arielle', 'Snizt');
-        addNewMember('Fanette', 'Snizt');
-        addNewMember('Gerard', 'Snizt');
-        addNewMember('Victor', 'Salva');
+
+        function createForm() {
+          let form = document.createElement('form');
+          let select = document.createElement('select');
+          let option = document.createElement('option');
+
+          document.body.prepend(select.append(option.val('before').text('Before'), option.val('after').text('After')))
+          document.body.prepend(form.append(('<input>').attr('type', 'text'), '<input>').attr('type', 'text'));
+        }
+        createForm();
       </script>
     </body>
 </html>
