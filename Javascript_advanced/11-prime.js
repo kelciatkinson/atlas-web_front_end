@@ -17,7 +17,9 @@ function countPrimeNumbers() {
 
 let start = performance.now();
 setTimeout(() => {
-  countPrimeNumbers();
+  for (let i = 0; i < 100; i++) {
+    countPrimeNumbers();
+  }
 })
 let end = performance.now();
 

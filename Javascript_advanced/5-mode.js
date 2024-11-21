@@ -15,7 +15,7 @@ function main() {
 
   let paragraph =  document.createElement('p');
   paragraph.textContent = 'Welcome Atlas!';
-  document.body.appendChild(paragraph);
+  document.body.append(paragraph);
 
   let spookyButton = document.createElement('button');
   spookyButton.textContent = 'Spooky';
@@ -29,9 +29,9 @@ function main() {
   screamModeButton.textContent = 'Scream mode';
   screamModeButton.addEventListener('click', screamMode);
 
-  document.body.appendChild(spookyButton);
-  document.body.appendChild(darkModeButton);
-  document.body.appendChild(screamModeButton);
+  document.body.append(spookyButton);
+  document.body.append(darkModeButton);
+  document.body.append(screamModeButton);
 }
 
 main()
