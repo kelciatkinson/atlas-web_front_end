@@ -29,22 +29,28 @@
     inputSubmit.addEventListener('click', function() {
       console.log('clicked');
       setCookies();
-    })
+    });
 
     let inputCookies = document.createElement('input');
     inputCookies.type = 'submit';
-    inputCookies.id = 'submit';
+    inputCookies.id = 'cookies';
     inputCookies.value = 'Show the cookies';
     inputCookies.addEventListener('click', function() {
       console.log('cookies clicked');
       showCookies();
-    })
+    });
 
     function setCookies() {
+      let firstname = document.getElementById('firstname').value;
+      let email = document.getElementById('email').value;
+      document.cookie = `firstname=${firstname}`;
+      document.cookie = `email=${email}`;
     }
 
     function showCookies() {
-
+      let paragraph = document.createElement('p');
+      paragraph.textContent = `Cookies: ${document.cookie}`;
+      document.body.append(paragraph);
     }
     document.body.append(headingOne, inputFirstName, inputEmail, inputSubmit, headingTwo, inputCookies);
     }
