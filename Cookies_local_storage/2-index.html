@@ -5,41 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script>
-    function form() {
-    let headingOne = document.createElement('h1');
-    headingOne.textContent = 'Login to the website';
-
-    let headingTwo = document.createElement('h1');
-    headingTwo.textContent = 'Cookies';
-
-    let inputFirstName = document.createElement('input');
-    inputFirstName.type = 'text';
-    inputFirstName.id = 'firstname';
-    inputFirstName.placeholder = 'Firstname';
-
-    let inputEmail = document.createElement('input');
-    inputEmail.type = 'text';
-    inputEmail.id = 'email';
-    inputEmail.placeholder = 'Email';
-
-    let inputSubmit = document.createElement('input');
-    inputSubmit.type = 'submit';
-    inputSubmit.id = 'submit';
-    inputSubmit.value = 'Log me in';
-    inputSubmit.addEventListener('click', function() {
-      console.log('clicked');
-      setCookies();
-    });
-
-    let inputCookies = document.createElement('input');
-    inputCookies.type = 'submit';
-    inputCookies.id = 'cookies';
-    inputCookies.value = 'Show the cookies';
-    inputCookies.addEventListener('click', function() {
-      console.log('cookies clicked');
-      showCookies();
-    });
-
     function setCookies() {
       let firstname = document.getElementById('firstname').value;
       let email = document.getElementById('email').value;
@@ -72,12 +37,16 @@
       return '';
     }
 
-    document.body.append(headingOne, inputFirstName, inputEmail, inputSubmit, headingTwo, inputCookies);
-    }
-    window.onload = form;
   </script>
 </head>
 <body>
-  
+  <div>
+    <h2>Login to the website</h2>
+    <input type="text" placeholder="Firstname" id="firstname">
+    <input type="text" placeholder="Email" id="email">
+    <button onclick="setCookies()">Log me in</button>
+    <h2>Cookies</h2>
+    <button onclick="showCookies()">Show the cookies</button>
+  </div>
 </body>
 </html>
