@@ -13,6 +13,7 @@
       let expires = date.toUTCString();
       document.cookie = `firstname=${firstname}; expires=${expires}; path=/`;
       document.cookie = `email=${email}; expires=${expires}; path=/`;
+      showWelcomeMessageOrForm();
     }
 
     function showCookies() {
@@ -37,16 +38,61 @@
       return '';
     }
 
+    function showForm() {
+      let welcomeMessage = document.getElementById('welcome');
+      if (welcomeMessage) {
+        welcomeMessage.remove();
+      }
+      document.getElementById('form').style.display = 'block';
+    }
+
+    function hideForm() {
+      document.getElementById('form').style.display = 'none';
+    }
+
+    function deleteCookiesAndShowForm() {
+      let date = new Date();
+      date.setTime(date.getTime() + (10 * 24 * 60 * 60 * 1000));
+      let expires = date.toUTCString();
+      document.cookie = `firstname=; expires=${expires}; path=/`;
+      document.cookie = `email=; expires=${expires}; path=/`;
+      showForm();
+    }
+
+    function showWelcomeMessageOrForm() {
+      let firstname = getCookie('firstname');
+      if (!firstname) {
+        showForm();
+      }
+      else {
+        hideForm();
+        let welcomeMessage = document.createElement('h1');
+        welcomeMessage.id = 'welcome';
+        welcomeMessage.textContent = `Welcome ${firstname}`;
+
+        let logout = document.createElement('a');
+        logout.textContent = `(logout)`;
+        logout.href = `#`;
+        logout.style.fontWeight = 'normal';
+        logout.style.fontStyle = 'italic';
+        logout.style.marginLeft = '10px';
+        logout.addEventListener('click', function() {
+          deleteCookiesAndShowForm();
+        });
+        
+        welcomeMessage.append(logout);
+        document.body.append(welcomeMessage);
+      }
+    }
+    window.onload = showWelcomeMessageOrForm;
   </script>
 </head>
 <body>
-  <div>
+  <div id="form">
     <h2>Login to the website</h2>
     <input type="text" placeholder="Firstname" id="firstname">
     <input type="text" placeholder="Email" id="email">
     <button onclick="setCookies()">Log me in</button>
-    <h2>Cookies</h2>
-    <button onclick="showCookies()">Show the cookies</button>
   </div>
 </body>
 </html>
