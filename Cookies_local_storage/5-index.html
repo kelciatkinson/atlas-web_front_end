@@ -8,7 +8,7 @@
     let availableItems = ['Shampoo', 'Soap', 'Sponge', 'Water'];
 
     function addItemToCart(item) {
-      localStorage.setItem(item, True);
+      localStorage.setItem(item, true);
     }
 
     function createStore() {
@@ -19,7 +19,8 @@
         console.log(item);
         li.addEventListener('click', function() {
           addItemToCart(item);
-        })
+        });
+        ul.append(li);
       });
       document.body.append(ul);
     }
@@ -28,6 +29,9 @@
       if (localStorage.length == 0) {
         return;
       }
+      let paragraph = document.createElement('p');
+      paragraph.textContent = `You previously had ${localStorage.length} items in your cart`;
+      document.body.append(paragraph);
     }
 
     window.onload = function() {
