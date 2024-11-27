@@ -70,14 +70,14 @@
     }
 
     function displayCart() {
-      let cart = document.querySelector('#cart');
+      let cart = document.getElementById('cartDiv');
       if (!cart) {
         let heading = document.createElement('h2');
         heading.textContent = `Your cart:`;
         document.body.append(heading);
 
         cart = document.createElement('div');
-        cart.id = 'cart';
+        cart.id = 'cartDiv';
         document.body.append(cart);
       }
       while (cart.firstChild) {
@@ -87,10 +87,22 @@
     }
 
     function updateCart() {
+      let cart = getCartFromStorage();
+
+      let ul = document.createElement('ul');
+      
       if (!Object.keys(cart).length) {
         let empty = document.createElement('li');
         empty.textContent = `Your cart is empty`;
-        document.body.append(empty);
+        ul.append(empty);
+      }
+      else {
+        let clear = document.createElement('li');
+        clear.textContent = `Clear my cart`;
+        clear.addEventListener('click', function() {
+          clearCart();
+        });
+        ul.append(clear);
       }
       Object.entries(cart).forEach(function(entry) {
         let item = entry[0];
@@ -106,9 +118,12 @@
         li.append(remove);
         ul.append(li);
       })
+      let cartDiv = document.getElementById('cartDiv');
+      while (cartDiv.firstChild) {
+        cartDiv.removeChild(cartDiv.firstChild);
+      }
+      cartDiv.append(ul);
     }
-    
-    
   </script>
 </head>
 <body>
